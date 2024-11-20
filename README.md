@@ -22,3 +22,8 @@ A simple and efficient CLI-based To-Do application written in Go. Manage your ta
    ```bash
    git clone https://github.com/your-username/go-todos-cli.git
    cd go-todos-cli
+   
+### Run the application
+```bash
+go run ./
+
