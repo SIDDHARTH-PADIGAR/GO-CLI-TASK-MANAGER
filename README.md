@@ -1,29 +1,56 @@
-# Go Todos CLI
+# Todo List CLI Application
 
-A simple and efficient CLI-based To-Do application written in Go. Manage your tasks with features like adding, editing, deleting, toggling completion, and listing todos.
+A simple Command Line Interface (CLI) Todo List application written in Go. This project demonstrates basic operations like adding, deleting, editing, and toggling todos, and it stores the todo list in a JSON file.
 
----
+## Installation
 
-## Features
-- Add, edit, delete, or toggle the completion status of todos.
-- Persistent storage using JSON files.
-- Clean and user-friendly tabular output.
-- Minimalistic CLI-based workflow.
+1. Clone the repository
+   ```sh
+   git clone https://github.com/your_username/todo-cli.git
+   cd todo-cli
+Run the application
 
----
+sh
+go run ./ -list
+Usage
+Here are the available commands for the application:
 
-## Getting Started
+Add a new todo
 
-### Prerequisites
-- Go installed (version 1.18 or later).
+sh
+go run ./ -add "Title of your todo"
+List all todos
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/go-todos-cli.git
-   cd go-todos-cli
-   
-### Run the application
-```bash
-go run ./
+sh
+go run ./ -list
+Edit a todo by index
 
+sh
+go run ./ -edit "index:new title"
+Toggle the completion status of a todo by index
+
+sh
+go run ./ -toggle index
+Delete a todo by index
+
+sh
+go run ./ -del index
+Example
+sh
+$ go run ./ -add "Walk the dog"
+$ go run ./ -list
+Output:
+
+#	Title	Completed	Created At	Completed At
+0	Walk the dog	❌	Wed, 20 Nov 2024 18:37	
+File Structure
+main.go: Entry point of the application
+
+todo.go: Contains the Todo struct and related methods
+
+command.go: Handles command line flags and operations
+
+storage.go: Manages loading and saving of todos to a JSON file
+
+License
+Distributed under the MIT License. See LICENSE for more information.
